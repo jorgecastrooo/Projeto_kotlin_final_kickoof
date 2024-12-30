@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Noticia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="criar_noticias.css">
+</head>
+
+<body>
+<div class="menu-btn" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<div class="menu" id="menu">
+    <ul class="menu-list">
+        <br><br><br>
+        <li><a href="homepage_adm.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="editar_resultado.html"><i class="fas fa-futbol"></i> Gerir Resultados</a></li>
+        <li><a href="#"><i class="fas fa-newspaper"></i> Publicar Notícias</a></li>
+        <li><a href="gerir_users.html"><i class="fas fa-users"></i> Gerir Utilizadores</a></li>
+        <li><a href="clube.html"><i class="fas fa-shield-alt"></i> Gerir Clubes</a></li>
+        <li><a href="liga.html"><i class="fas fa-list"></i> Gerir Ligas</a></li>
+        <li><a href="jogos.html"><i class="fas fa-calendar-plus"></i> Criar Jogos</a></li>
+        <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+    </ul>
+</div>
+
+<div class="title">Publicar Notícia</div>
+
+<form action="/create-news" method="post">
+<div class="form-container">
+    <label for="titulo">Título da Notícia</label>
+    <input type="text" id="titulo" name="title" placeholder="Digite o título da notícia">
+
+    <label style="margin-top: 40px;" for="descricao">Descrição</label>
+    <textarea name="content" id="descricao" placeholder="Digite a descrição da notícia"></textarea>
+</div>
+
+<!-- Combobox for category filter -->
+<div class="filter-section">
+    <select id="category-filter" name="category" onchange="filterNews()">
+        <option value="all" selected>Categorias</option>
+        <option value="transferencias">Transferências</option>
+        <option value="resultados">Resultados</option>
+        <option value="lesoes">Lesões</option>
+    </select>
+    <br>
+    <button class="publish-btn">Publicar Notícia</button>
+    </div>
+    <div id="message-container" style="text-align: center; margin-top: 20px;">
+        <p id="message" style="font-size: 20px; font-weight: bold;"></p>
+    </div>
+
+</form>
+
+</body>
+
+</html>
+<script src="criar_noticias.js"></script>

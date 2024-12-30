@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerir Equipas de Futebol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="clube.css">
+</head>
+<body>
+<h1>Gerir Equipas de Futebol</h1>
+
+<div class="menu-btn" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<div class="menu" id="menu">
+    <ul class="menu-list">
+        <br><br><br>
+        <li><a href="editar_resultado.html"><i class="fas fa-futbol"></i> Gerir Resultados</a></li>
+        <li><a href="criar_noticias.html.html"><i class="fas fa-newspaper"></i> Publicar Notícias</a></li>
+        <li><a href="gerir_users.html"><i class="fas fa-users"></i> Gerir Utilizadores</a></li>
+        <li><a href="#"><i class="fas fa-shield-alt"></i> Gerir Clubes</a></li>
+        <li><a href="liga.html"><i class="fas fa-list"></i> Gerir Ligas</a></li>
+        <li><a href="jogos.html"><i class="fas fa-calendar-plus"></i> Criar Jogos</a></li>
+        <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+    </ul>
+</div>
+
+<div class="form-container">
+    <button class="toggle-btn" onclick="toggleContent('create')">
+        Criar Clube
+        <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <form action="/create-clube" method="post">
+        <div class="toggle-content" id="create-content">
+            <div class="form-group">
+                <label for="team-name">Nome da Equipa:</label>
+                <input type="text" id="team-name" name="NomeEquipe" placeholder="Digite o nome da equipa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="team-league">Liga:</label>
+                <select id="team-league" name="Liga" required>
+                    <option value="">Selecione a Liga</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="team-coach">Nome do Treinador:</label>
+                <input type="text" id="team-coach" name="NomeTreinador" placeholder="Digite o nome do treinador" required>
+            </div>
+
+            <div class="form-group">
+                <label for="team-foundation">Ano de Fundação:</label>
+                <input type="text" id="team-foundation" name="AnoFundacao" placeholder="Digite o ano de fundação" oninput="validateYear()" required>
+                <div id="foundation-error" class="error-message">O ano de fundação não pode ser maior que o ano atual.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="team-players">Jogadores (separados por vírgula ou nova linha):</label>
+                <textarea id="team-players" name="Jogadores" placeholder="Digite os nomes dos jogadores..." rows="4" required></textarea>
+            </div>
+
+            <button class="button" type="submit">Criar Equipa</button>
+        </div>
+    </form>
+
+
+    <button class="toggle-btn" onclick="toggleContent('edit')">
+        Editar Clube
+        <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="toggle-content" id="edit-content">
+        <form action="/edit-clube" method="post">
+            <div class="form-group">
+                <label for="select-club">Selecione o Clube:</label>
+                <select id="select-club" name="NomeEquipe" onchange="loadClubDetails()">
+                    <option value="">Escolha um clube...</option>
+                    <!-- Clubes serão carregados aqui dinamicamente -->
+                </select>
+            </div>
+
+            <div id="edit-form" style="display: none;">
+                <div class="form-group">
+                    <label for="edit-team-name">Nome da Equipa:</label>
+                    <input type="text" id="edit-team-name" name="nome-novo" placeholder="Digite o nome da equipa">
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-team-league">Liga:</label>
+                    <select id="edit-team-league" name="Liga">
+                        <!-- Ligas serão carregadas aqui -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-team-coach">Nome do Treinador:</label>
+                    <input type="text" id="edit-team-coach" name="NomeTreinador" placeholder="Digite o nome do treinador">
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-team-foundation">Ano de Fundação:</label>
+                    <input type="text" id="edit-team-foundation" name="AnoFundacao" placeholder="Digite o ano de fundação" oninput="validateEditYear()">
+                    <div id="foundation-error-edit" class="error-message">O ano de fundação não pode ser maior que o ano atual.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-team-players">Jogadores (separados por vírgula ou nova linha):</label>
+                    <textarea id="edit-team-players" name="Jogadores" placeholder="Digite os nomes dos jogadores..." rows="4"></textarea>
+                </div>
+
+                <button class="button">Salvar Alterações</button>
+            </div>
+        </form>
+    </div>
+
+
+    <button class="toggle-btn" onclick="toggleContent('elim')">
+        Eliminar Clube
+        <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="toggle-content" id="elim-content">
+        <form action="/delete-clube" method="post">
+        <div class="form-group">
+            <label for="select-club">Selecione o Clube:</label>
+            <select id="select-club-2" name="clube">
+                <option value="">Escolha um clube...</option>
+
+            </select>
+        </div>
+        <button class="button" style="background-color: #f44336;">Eliminar Clube</button>
+    </form>
+    </div>
+
+    <div id="error-message" style="display: none;" class="error-message"></div>
+
+
+</div> <!-- This is the missing closing tag -->
+
+</body>
+</html>
+<script src="clube.js"></script>

@@ -1,0 +1,49 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerir Utilizadores</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="gerir_users.css">
+    </head>
+
+    <body>
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="menu" id="menu">
+        <ul class="menu-list">
+            <br><br><br>
+            <li><a href="homepage_adm.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="editar_resultado.html"><i class="fas fa-futbol"></i> Gerir Resultados</a></li>
+            <li><a href="criar_noticias.html"><i class="fas fa-newspaper"></i> Publicar Notícias</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Gerir Utilizadores</a></li>
+            <li><a href="clube.html"><i class="fas fa-shield-alt"></i> Gerir Clubes</a></li>
+            <li><a href="liga.html"><i class="fas fa-list"></i> Gerir Ligas</a></li>
+            <li><a href="jogos.html"><i class="fas fa-calendar-plus"></i> Criar Jogos</a></li>
+            <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </div>
+
+    <div class="title">Gerir Utilizadores</div>
+
+    <!-- Campo de Pesquisa com checkbox de ADM -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Pesquise pelo username">
+        <!-- Checkbox para ADM -->
+        <div class="adm-checkbox-container">
+            <input type="checkbox" id="adm-checkbox">
+            <label for="adm-checkbox">ADM</label>
+        </div>
+    </div>
+
+    <!-- Informações do Usuário -->
+    <div id="user-container"></div>
+
+    </body>
+
+    </html>
+    <script src="gerir_users.js"></script>

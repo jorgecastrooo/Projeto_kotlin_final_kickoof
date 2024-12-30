@@ -1,0 +1,340 @@
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('imagens/20723325-fechar-acima-do-uma-futebol-atacante-pronto-para-chutes-a-bola-dentro-a-futebol-objetivo-foto.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            padding-left: 100px;
+            padding-top: 20px;
+
+        }
+
+        h1 {
+            text-align: left;
+            font-size: 36px;
+            margin-left: 100px;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .toggle-btn {
+            background: none;
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .toggle-btn i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-btn:focus {
+            outline: none;
+        }
+
+        .toggle-content {
+            display: block;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            margin-top: 10px;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .toggle-content.show {
+            max-height: 800px;
+            opacity: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #fff;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .button:active {
+            background-color: #388e3c;
+        }
+
+        #logo-preview {
+            max-width: 150px;
+            margin-top: 10px;
+        }
+
+        #players-container input {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        select {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+            border: 1px solid #fff;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        select:focus {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-color: #4CAF50;
+            color: #fff;
+        }
+
+        option {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        option:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        #foundation-error {
+            display: none;
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        #foundation-error-edit {
+            display: none;
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        #edit-logo-preview {
+    max-width: 80px;  /* Ajuste o tamanho conforme necessário */
+    margin-top: 10px;
+}
+
+.menu-btn {
+      position: fixed;
+      top: 40px; /* Move the button slightly up */
+      left: 30px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      background: #000;
+      padding: 20px;
+      border-radius: 50%;
+      box-shadow: 0px 4px 8px rgba(189, 189, 189, 0.3), 0px 4px 10px rgba(75, 75, 75, 0.3);
+      z-index: 2500; /* Adjust z-index to ensure the menu button is above the side menu */
+  }
+
+      .menu-btn:hover {
+          transform: scale(1.1) translate(3px, 3px); /* Scale effect and slight movement on hover */
+          box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5), 0px 6px 15px rgba(0, 0, 0, 0.5); /* Increased shadow on hover */
+      }
+
+  .menu {
+      position: fixed;
+      top: 0;
+      left: -330px;
+      width: 330px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9); /* Adjust transparency */
+      transition: left 0.3s ease;
+      overflow: hidden;
+      z-index: 2000; /* Adjust z-index to ensure the menu is above all content */
+  }
+
+      .menu ul {
+          list-style: none;
+          padding: 0;
+          margin: 80px 0 0 0; /* Increase top margin to separate from the menu button */
+      }
+
+          .menu ul li {
+              margin-bottom: 20px; /* Add more bottom margin between menu options */
+              padding-left: 20px; /* Add left padding to move menu options away */
+              opacity: 0;
+              transform: translateX(-100%);
+              transition: opacity 0.5s ease, transform 0.5s ease;
+              position: relative; /* Add relative position */
+          }
+
+              .menu ul li.show {
+                  opacity: 1;
+                  transform: translateX(0);
+              }
+
+              .menu ul li a {
+                  text-decoration: none;
+                  color: #fff;
+                  font-size: 22px;
+                  display: flex; /* Alterado para flex */
+                  align-items: center; /* Alinhar itens verticalmente */
+                  padding: 15px 30px; /* Adiciona padding */
+                  transition: background-color 0.3s ease, font-size 0.3s ease; /* Add transition for font size */
+                  position: relative; /* Add relative position */
+              }
+
+                  .menu ul li a i {
+                      margin-right: 15px; /* Adiciona espaço entre o ícone e o texto */
+                  }
+
+
+                  .menu ul li a:hover {
+                      background-color: rgba(255, 255, 255, 0.1);
+                      font-size: 18px; /* Increase font size on hover */
+                  }
+
+                  .menu ul li a::after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 2px; /* Line thickness */
+                      background-color: #fff; /* Line color */
+                      bottom: 0;
+                      left: 0;
+                      transform: scaleX(0); /* Initially no width */
+                      transition: transform 0.5s ease; /* Add transition animation */
+                  }
+
+                  .menu ul li a:hover::after {
+                      transform: scaleX(1); /* Increase line width on hover */
+                  }
+
+                  .menu ul li.logout {
+      position: absolute;
+      bottom: 20px; /* Move away from the bottom of the menu */
+      width: calc(100% - 40px); /* Set button length */
+  }
+
+      .menu ul li.logout a {
+          color: #ff0000; /* Red color */
+      }
+
+      .button[style*="background-color: #f44336;"] {
+    background-color: #f44336;
+}
+
+.button[style*="background-color: #f44336;"]:hover {
+    background-color: #e53935;
+}
+#edit-form {
+  display: none;
+}
+
+#edit-form.show {
+  display: block;
+  position: relative;
+  z-index: 10; /* Ajuste o índice z se necessário para que o formulário apareça acima de outros elementos */
+}
+
+button {
+  display: block;
+  margin-top: 10px; /* Ajuste o espaçamento conforme necessário */
+}
+
+           /* Estilo da mensagem de erro/sucesso */
+    #error-message {
+        position: fixed;
+        top: 20px;  /* Posição mais para cima */
+        right: 20px;  /* Posição mais para a direita */
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        z-index: 1000;
+    }
+
+    /* Para mensagens de sucesso (verde) */
+    #error-message.success {
+        background-color: rgba(0, 128, 0, 0.7);
+    }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Futebol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="editar_resultado.css">
+</head>
+
+<body>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+    <div class="menu" id="menu">
+        <ul class="menu-list">
+            <br><br><br>
+            <li><a href="homepage_adm.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="#"><i class="fas fa-futbol"></i> Gerir Resultados</a></li>
+            <li><a href="criar_noticias.html"><i class="fas fa-newspaper"></i> Publicar Notícias</a></li>
+            <li><a href="gerir_users.html"><i class="fas fa-users"></i> Gerir Utilizadores</a></li>
+            <li><a href="clube.html"><i class="fas fa-shield-alt"></i> Gerir Clubes</a></li>
+            <li><a href="liga.html"><i class="fas fa-list"></i> Gerir Ligas</a></li>
+            <li><a href="jogos.html"><i class="fas fa-calendar-plus"></i> Criar Jogos</a></li>
+            <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </div>
+
+
+    <div class="results-section">
+
+    </div>
+
+    <!-- Modal para Gol, Autogol, Substituição e Cartão -->
+    <div class="modal" id="action-modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Registrar Ação</h3>
+
+            <!-- Dropdown para Seleção de Ação -->
+            <select id="team-select">
+                <option value="" disabled selected>Selecione o Clube</option>
+                <option value="time-a">Time A</option>
+                <option value="time-b">Time B</option>
+            </select>
+
+            <div id="goal-options" style="display:none;">
+                <form id="goal-form" method="POST" action="/submit-goal">
+                    <input type="text" id="club-input" name="club" readonly hidden required>
+                    <select id="goal-type" name="goalType">
+                        <option value="gol">Gol</option>
+                        <option value="autogol">Autogol</option>
+                    </select>
+                    <select id="player-goal" name="player">
+                        <option value="jogador1">Jogador 1</option>
+                        <option value="jogador2">Jogador 2</option>
+                        <option value="jogador3">Jogador 3</option>
+                    </select>
+                    <button type="submit">Confirmar</button>
+                    <button type="button" onclick="closeModal()">Cancelar</button>
+                </form>
+            </div>
+
+            <div id="card-options" style="display:none;">
+                <form id="card-form" method="POST" action="/submit-card">
+                <input type="text" id="club-input-1" name="club" readonly required hidden>
+                <select id="card-type" name="card_type">
+                    <option value="amarelo">Cartão Amarelo</option>
+                    <option value="vermelho">Cartão Vermelho</option>
+                </select>
+                <select id="player-card" name="player">
+                    <option value="jogador1">Jogador 1</option>
+                    <option value="jogador2">Jogador 2</option>
+                    <option value="jogador3">Jogador 3</option>
+                </select>
+                    <button type="submit">Confirmar</button>
+                <button onclick="closeModal()">Cancelar</button>
+                </form>
+            </div>
+
+            <div id="substitution-options" style="display:none;">
+                <select id="player-out">
+                    <option value="jogador1">Jogador 1</option>
+                    <option value="jogador2">Jogador 2</option>
+                    <option value="jogador3">Jogador 3</option>
+                </select>
+                <select id="player-in">
+                    <option value="jogador4">Jogador 4</option>
+                    <option value="jogador5">Jogador 5</option>
+                    <option value="jogador6">Jogador 6</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificação -->
+    <div id="error-message" style="display: none;" class="error-message"></div>
+
+</body>
+
+</html>
+<script src="editar_resultado.js"></script>

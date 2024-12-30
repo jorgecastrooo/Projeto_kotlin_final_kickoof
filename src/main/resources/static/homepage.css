@@ -1,0 +1,236 @@
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #222; /* Alterado para um tom de cinza escuro */
+    }
+
+    .slideshow-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+        .slideshow-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+            .slideshow-container img.active {
+                opacity: 1;
+            }
+
+    .menu-btn {
+        position: fixed;
+        top: 40px; /* Move the button slightly up */
+        left: 30px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        background: #000;
+        padding: 20px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(189, 189, 189, 0.3), 0px 4px 10px rgba(75, 75, 75, 0.3);
+        z-index: 2500; /* Adjust z-index to ensure the menu button is above the side menu */
+    }
+
+        .menu-btn:hover {
+            transform: scale(1.1) translate(3px, 3px); /* Scale effect and slight movement on hover */
+            box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5), 0px 6px 15px rgba(0, 0, 0, 0.5); /* Increased shadow on hover */
+        }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Adjust transparency */
+        transition: left 0.3s ease;
+        overflow: hidden;
+        z-index: 2000; /* Adjust z-index to ensure the menu is above all content */
+    }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 80px 0 0 0; /* Increase top margin to separate from the menu button */
+        }
+
+            .menu ul li {
+                margin-bottom: 20px; /* Add more bottom margin between menu options */
+                padding-left: 20px; /* Add left padding to move menu options away */
+                opacity: 0;
+                transform: translateX(-100%);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                position: relative; /* Add relative position */
+            }
+
+                .menu ul li.show {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                .menu ul li a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 22px;
+                    display: flex; /* Alterado para flex */
+                    align-items: center; /* Alinhar itens verticalmente */
+                    padding: 15px 30px; /* Adiciona padding */
+                    transition: background-color 0.3s ease, font-size 0.3s ease; /* Add transition for font size */
+                    position: relative; /* Add relative position */
+                }
+
+                    .menu ul li a i {
+                        margin-right: 15px; /* Adiciona espaço entre o ícone e o texto */
+                    }
+
+
+                    .menu ul li a:hover {
+                        background-color: rgba(255, 255, 255, 0.1);
+                        font-size: 18px; /* Increase font size on hover */
+                    }
+
+                    .menu ul li a::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 2px; /* Line thickness */
+                        background-color: #fff; /* Line color */
+                        bottom: 0;
+                        left: 0;
+                        transform: scaleX(0); /* Initially no width */
+                        transition: transform 0.5s ease; /* Add transition animation */
+                    }
+
+                    .menu ul li a:hover::after {
+                        transform: scaleX(1); /* Increase line width on hover */
+                    }
+
+    .welcome-text {
+        position: absolute;
+        padding-left: 76px;
+        top: 25%;
+        transform: translateY(-50%);
+        font-size: 60px;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add soft shadow */
+        animation: slideIn 1.5s ease forwards;
+        z-index: 1500; /* Adjust z-index to ensure welcome text is above the menu */
+    }
+
+    .content {
+        color: #fff;
+        font-size: 25px;
+        animation: slideIn 2.5s ease forwards;
+        margin-top: 19%;
+        padding-left: 76px;
+        position: relative;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Add soft shadow */
+    }
+
+    @keyframes expandLine {
+        from {
+            width: 0; /* Start with no width */
+        }
+
+        to {
+            width: 100%; /* End with full width */
+        }
+    }
+
+    .menu ul li.logout {
+        position: absolute;
+        bottom: 20px; /* Move away from the bottom of the menu */
+        width: calc(100% - 40px); /* Set button length */
+    }
+
+        .menu ul li.logout a {
+            color: #ff0000; /* Red color */
+        }
+
+    @keyframes slideIn {
+        from {
+            left: -100%; /* Start off-screen to the left */
+        }
+
+        to {
+            left: 0; /* End at initial position */
+        }
+    }
+
+    @keyframes slideInFromLeft {
+        from {
+            opacity: 0;
+            left: -200px; /* Start off-screen to the left */
+        }
+
+        to {
+            opacity: 1;
+            left: 40px; /* End at specified position */
+        }
+    }
+
+    .content p {
+        margin-bottom: 20px;
+    }
+
+    /* Buttons styling */
+    .button-container {
+        position: absolute;
+        margin-left: 32px;
+        padding-top: 30px;
+        display: flex;
+        animation: slideInFromLeft 2s ease forwards; /* Animate button container slide-in from left */
+    }
+
+        .button-container button {
+            margin-right: 10px; /* Adjust margin */
+            padding: 15px 30px; /* Increase padding */
+            font-size: 20px; /* Adjust font size */
+            color: #fff;
+            background-color: #23722a; /* Darker and neutral color */
+            border: 2px solid#4f4f4f; /* Adicionando borda */
+            border-radius: 30px; /* Round corners */
+            cursor: pointer;
+            transition: all 0.3s ease; /* Transição para todas as propriedades */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .button-container button:hover {
+                background-color: #2f6934; /* Darker color on hover */
+                border-color: #555; /* Darker border color on hover */
+                transform: scale(1.05); /* Aumentar tamanho no hover */
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Aumentar sombra no hover */
+            }
+
+            .button-container button:active {
+                background-color: #222; /* Even darker color on click */
+                border-color: #222; /* Even darker border color on click */
+                transform: scale(0.95); /* Diminuir tamanho no click */
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Diminuir sombra no click */
+            }
+
+    @keyframes slideInFromLeft {
+        from {
+            opacity: 0;
+            left: -200px; /* Start off-screen to the left */
+        }
+
+        to {
+            opacity: 1;
+            left: 40px; /* End at specified position */
+        }
+    }

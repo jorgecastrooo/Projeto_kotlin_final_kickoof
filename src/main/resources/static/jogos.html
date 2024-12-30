@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar e Editar jogos de Futebol</title>
+    <!-- Adicionar o link do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="jogos.css">
+</head>
+
+<body>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+    <div class="menu" id="menu">
+        <ul class="menu-list">
+            <br><br><br>
+            <li><a href="homepage_adm.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="editar_resultado.html"><i class="fas fa-futbol"></i> Gerir Resultados</a></li>
+            <li><a href="criar_noticias.html"><i class="fas fa-newspaper"></i> Publicar Notícias</a></li>
+            <li><a href="gerir_users.html"><i class="fas fa-users"></i> Gerir Utilizadores</a></li>
+            <li><a href="clube.html"><i class="fas fa-shield-alt"></i> Gerir Clubes</a></li>
+            <li><a href="liga.html"><i class="fas fa-list"></i> Gerir Ligas</a></li>
+            <li><a href="#"><i class="fas fa-calendar-plus"></i> Criar Jogos</a></li>
+            <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <h1>Criar e Editar jogos de Futebol</h1>
+
+        <!-- Botões de Toggle para Mostrar/Esconder Formulários -->
+        <button class="toggle-btn" onclick="toggleContent('create')">
+            Criar jogo
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="toggle-content" id="create-content">
+            <form action="/create-game" method="POST">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="game-date">Data:</label>
+                    <input type="date" id="game-date" name="game_date" required>
+                </div>
+                <!-- Escolher hora -->
+                <div class="form-group">
+                    <label for="game-time">Hora:</label>
+                    <input type="time" id="game-time" name="game_time" required>
+                </div>
+                <!-- Selecionar equipes -->
+                <div class="form-group">
+                    <label for="home-team">Equipe da Casa:</label>
+                    <select id="home-team" name="home_team" required>
+                        <option value="">Selecione a equipe</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="away-team">Equipe Visitante:</label>
+                    <select id="away-team" name="away_team" required>
+                        <option value="" selected>Selecione o jogo</option>
+                    </select>
+                </div>
+
+                <button>Criar Jogo</button>
+        </div>
+            </form>
+    </div>
+        <!-- Botões de Toggle para Editar Liga -->
+        <button class="toggle-btn" onclick="toggleContent('edit')">
+            Editar jogo
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="toggle-content" id="edit-content">
+            <div class="form-container">
+                <h2>Editar jogo</h2>
+                <form action="/edit-game" method="POST">
+                    <div class="form-group">
+                        <label for="edit-game-select">Selecione o jogo</label>
+                        <select id="edit-game-select" name="game">
+                            <option value="" selected>Selecione o jogo</option>
+                        </select>
+                    </div>
+                <div class="form-group">
+                    <label for="edit-game-date">Data:</label>
+                    <input type="date" id="edit-game-date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="edit-game-time">Hora:</label>
+                    <input type="time" id="edit-game-time" name="hora">
+                </div>
+                <button  type="submit" id="save-edit-btn">Salvar Alterações</button>
+            </form>
+            </div>
+        </div>
+    
+        <!-- Botões de Toggle para Eliminar Liga -->
+        <button class="toggle-btn" onclick="toggleContent('delete')">
+            Eliminar jogo
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="toggle-content" id="delete-content">
+            <form action="/delete-game" method="POST">
+                <div class="form-container">
+                    <h2>Eliminar jogo</h2>
+                    <div class="form-group">
+                        <label for="delete-league-select">Selecione um jogo</label>
+                        <select id="delete-league-select" name="game" required>
+                            <option value="">Selecione um jogo</option>
+                            <!-- As opções de jogos serão preenchidas dinamicamente -->
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="delete-btn">Eliminar Liga</button>
+            </form>
+        </div>
+    </div>
+    <div id="error-message" style="display: none;" class="error-message"></div>
+
+</body>
+
+</html>
+<script src="jogos.js"></script>

@@ -1,0 +1,229 @@
+          body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             overflow-x: hidden; /* Impede o scroll horizontal desnecessário */
+             overflow-y: auto; /* Permite scroll vertical */
+             background: url('imagens/20723325-fechar-acima-do-uma-futebol-atacante-pronto-para-chutes-a-bola-dentro-a-futebol-objetivo-foto.jpg') no-repeat center center fixed;
+             background-size: cover;
+            }
+
+
+            .menu-btn {
+              position: fixed;
+              top: 40px;
+              left: 30px;
+              font-size: 24px;
+              color: #fff;
+              cursor: pointer;
+              transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+              background: #000;
+              padding: 20px;
+              border-radius: 50%;
+              box-shadow: 0px 4px 8px rgba(189, 189, 189, 0.3), 0px 4px 10px rgba(75, 75, 75, 0.3);
+              z-index: 3500;
+            }
+
+            .menu-btn:hover {
+              transform: scale(1.1) translate(3px, 3px);
+              box-shadow: 0px 6px 12px rgba(255, 255, 0, 0.5), 0px 6px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu {
+              position: fixed;
+              top: 0;
+              left: -330px;
+              width: 330px;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.9);
+              transition: left 0.3s ease;
+              overflow: hidden;
+              z-index: 2000;
+            }
+
+            .menu ul {
+              list-style: none;
+              padding: 0;
+              margin: 80px 0 0 0;
+            }
+
+            .menu ul li {
+              margin-bottom: 20px;
+              padding-left: 20px;
+              opacity: 0;
+              transform: translateX(-100%);
+              transition: opacity 0.5s ease, transform 0.5s ease;
+              position: relative;
+            }
+
+            .menu ul li.show {
+              opacity: 1;
+              transform: translateX(0);
+            }
+
+            .menu ul li a {
+              text-decoration: none;
+              color: #fff;
+              font-size: 22px;
+              display: flex;
+              align-items: center;
+              padding: 15px 30px;
+              transition: background-color 0.3s ease, font-size 0.3s ease;
+              position: relative;
+            }
+
+            .menu ul li a i {
+              margin-right: 15px;
+            }
+
+            .menu ul li a:hover {
+              background-color: rgba(255, 255, 255, 0.1);
+              font-size: 18px;
+            }
+
+            .menu ul li a::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              background-color: #fff;
+              bottom: 0;
+              left: 0;
+              transform: scaleX(0);
+              transition: transform 0.5s ease;
+            }
+
+            .menu ul li a:hover::after {
+              transform: scaleX(1);
+            }
+
+            .menu ul li.logout {
+              position: absolute;
+              bottom: 20px;
+              width: calc(100% - 40px);
+            }
+
+            .menu ul li.logout a {
+              color: #ff0000;
+            }
+
+            .results-section {
+              position: absolute;
+              top: 200px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 70%;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              color: white;
+              text-align: center;
+            }
+
+            .filter-section {
+              position: absolute;
+              top: 150px;
+              left: 50%;
+              transform: translateX(-50%);
+              color: white;
+              margin-bottom: 20px;
+            }
+
+            .result-card {
+              background-color: rgba(0, 0, 0, 0.7);
+              padding: 15px;
+              border-radius: 10px;
+              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 14px;
+              color: white;
+            }
+
+            .result-team {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .team-name {
+              font-size: 16px;
+              font-weight: bold;
+            }
+
+            .team-score {
+              font-size: 22px;
+              margin: 10px 0;
+            }
+
+            .team-details {
+              font-size: 12px;
+              text-align: left;
+            }
+
+            .team-logo {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin-bottom: 10px;
+            }
+
+            .match-details {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            }
+
+            .match-time {
+              font-size: 16px;
+              font-weight: bold;
+              color: #fff;
+              margin-bottom: 5px;
+            }
+
+            .match-status {
+              font-size: 18px;
+              font-weight: bold;
+              color: #28a745;
+            }
+
+            .match-status.terminated {
+              color: #dc3545;
+            }
+
+            .card-yellow {
+              color: #FFD700;
+            }
+
+            .card-red {
+              color: #FF4500;
+            }
+
+            del {
+              color: #ff6f6f;
+            }
+
+              .title {
+      position: fixed;
+      top: 110px;
+       left: 140px;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+      animation: slideIn 1.5s forwards;
+    }
+
+            .text-warning {
+    color: yellow; /* Cor do cartão amarelo */
+    font-size: 1.4em; /* Ajuste o tamanho se necessário */
+}
+
+.text-danger {
+    color: red; /* Cor do cartão vermelho */
+    font-size: 1.4em; /* Ajuste o tamanho se necessário */
+}
+
+

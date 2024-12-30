@@ -1,0 +1,295 @@
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background: url('imagens/20723325-fechar-acima-do-uma-futebol-atacante-pronto-para-chutes-a-bola-dentro-a-futebol-objetivo-foto.jpg') no-repeat center center fixed;
+                background-size: cover;
+                background-position: center;
+                color: white;
+            }
+
+            .menu-btn {
+                position: fixed;
+                top: 40px;
+                left: 30px;
+                font-size: 24px;
+                color: #fff;
+                cursor: pointer;
+                transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+                background: #000;
+                padding: 20px;
+                border-radius: 50%;
+                box-shadow: 0px 4px 8px rgba(189, 189, 189, 0.3), 0px 4px 10px rgba(75, 75, 75, 0.3);
+                z-index: 3500;
+            }
+
+            .menu-btn:hover {
+                transform: scale(1.1) translate(3px, 3px);
+                box-shadow: 0px 6px 12px rgba(255, 255, 0, 0.5), 0px 6px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu {
+                position: fixed;
+                top: 0;
+                left: -330px;
+                width: 330px;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                transition: left 0.3s ease;
+                overflow: hidden;
+                z-index: 2000;
+            }
+
+            .menu ul {
+                list-style: none;
+                padding: 0;
+                margin: 80px 0 0 0;
+            }
+
+            .menu ul li {
+                margin-bottom: 20px;
+                padding-left: 20px;
+                opacity: 0;
+                transform: translateX(-100%);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                position: relative;
+            }
+
+            .menu ul li.show {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .menu ul li a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 22px;
+                display: flex;
+                align-items: center;
+                padding: 15px 30px;
+                transition: background-color 0.3s ease, font-size 0.3s ease;
+                position: relative;
+            }
+
+            .menu ul li a i {
+                margin-right: 15px;
+            }
+
+            .menu ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                font-size: 18px;
+            }
+
+            .menu ul li a::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+                bottom: 0;
+                left: 0;
+                transform: scaleX(0);
+                transition: transform 0.5s ease;
+            }
+
+            .menu ul li a:hover::after {
+                transform: scaleX(1);
+            }
+
+            .menu ul li.logout {
+                position: absolute;
+                bottom: 20px;
+                width: calc(100% - 40px);
+            }
+
+            .menu ul li.logout a {
+                color: #ff0000;
+            }
+
+            .title {
+                text-align: left;
+                font-size: 40px;
+                font-weight: bold;
+                margin-top: 50px;
+                margin-left: 150px;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+                padding-right: 20px;
+            }
+
+            .search-container {
+                margin: 40px auto;
+                width: 80%;
+                max-width: 800px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .search-container input {
+                font-size: 18px;
+                padding: 12px 20px;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: 1px solid #fff;
+                border-radius: 50px;
+                outline: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .search-container input:focus {
+                background-color: rgba(0, 0, 0, 0.6);
+                box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            }
+
+            .search-container button {
+                background-color: #2e8b57;
+                color: white;
+                font-size: 18px;
+                padding: 12px 30px;
+                border: 1px solid white;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+            .search-container button:hover {
+                background-color: #3cb371;
+                transform: scale(1.05);
+            }
+
+            .search-container button:active {
+                background-color: #2e8b57;
+                transform: scale(0.98);
+            }
+
+            /* Estilo para as informações do usuário */
+            .user-info {
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 30px;
+                margin: 40px auto;
+                width: 80%;
+                max-width: 800px;
+                border-radius: 8px;
+                border: 2px solid #fff;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+                background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+            }
+
+            .user-info h3 {
+                font-size: 30px;
+                margin-bottom: 20px;
+                font-weight: bold;
+                color: #ffffff;
+                text-transform: uppercase;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+                letter-spacing: 1px;
+            }
+
+            .user-info p {
+                font-size: 18px;
+                margin: 10px 0;
+                color: #fff;
+                font-weight: 300;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .user-info span {
+                font-weight: bold;
+                color: #ffffff;
+            }
+
+            .user-info .info-line {
+                border-bottom: 1px solid #ffffff;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+
+            .user-info i {
+                margin-right: 8px;
+                color: #2ecc71;
+            }
+
+            .user-info .user-icon {
+                font-size: 50px;
+                color: #2ecc71;
+                margin-bottom: 20px;
+                display: block;
+                text-align: center;
+            }
+
+            /* Estilo para os botões */
+            .user-info button {
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-right: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            }
+
+            .user-info button.delete {
+                background-color: #e74c3c;
+            }
+
+            .user-info button.delete:hover {
+                background-color: #ff6f61;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            .user-info button.delete:active {
+                background-color: #c0392b;
+                transform: translateY(2px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .user-info button.make-adm {
+                background-color: #2e8b57;
+            }
+
+            .user-info button.make-adm:hover {
+                background-color: #3cb371;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            .user-info button.make-adm:active {
+                background-color: #2e8b57;
+                transform: translateY(2px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .adm-checkbox-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+            }
+
+            .adm-checkbox-container input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+                background-color: rgba(255, 255, 255, 0.2);
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .adm-checkbox-container input[type="checkbox"]:checked {
+                background-color: #2e8b57;
+                border-color: #2e8b57;
+            }
+
+            .adm-checkbox-container label {
+                font-size: 18px;
+                cursor: pointer;
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            }

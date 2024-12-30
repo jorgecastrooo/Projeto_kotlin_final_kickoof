@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="homepage_adm.css">
+
+
+</head>
+<body>
+
+<div class="slideshow-container">
+  <img src='imagens/soccer-ball-pictures-r9dghpgb6z61m09a.jpg' alt="Slide 1" class="active">
+  <img src='imagens/stadium-1590576_1280.jpg' alt="Slide 2">
+  <img src= 'imagens/soccer-players-fwz1dtj07bulhb0o.jpg' alt="Slide 3">
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<div class="menu" id="menu">
+  <ul class="menu-list">
+    <br><br><br>
+    <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
+    <li><a href="editar_resultado.html"><i class="fas fa-futbol"></i> Gerir Resultados</a></li>
+    <li><a href="criar_noticias.html"><i class="fas fa-newspaper"></i> Publicar Notícias</a></li>
+    <li><a href="gerir_users.html"><i class="fas fa-users"></i> Gerir Utilizadores</a></li>
+    <li><a href="clube.html"><i class="fas fa-shield-alt"></i> Gerir Clubes</a></li>
+    <li><a href="liga.html"><i class="fas fa-list"></i> Gerir Ligas</a></li>
+    <li><a href="jogos.html"><i class="fas fa-calendar-plus"></i> Criar Jogos</a></li>
+    <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+  </ul>
+</div>
+
+
+
+<div class="welcome-text">Bem vindo ao KickOff-(ADM)</div>
+
+<div class="content">
+
+  <p>Gerir e atualizar os resultados em direto dos principais campeonatos.</p>
+  <p>Publicar notícias exclusivas sobre equipas, jogadores e transferências.</p>
+  <p>Manter tabelas, classificações e estatísticas sempre atualizadas.</p>
+  <p>Gerir utilizadores, incluindo aprovar registos</p>
+
+</div>
+
+
+<div class="button-container">
+
+  <button style="margin-right: 28px;" onclick="window.location.href='editar_resultado.html';" >Gerir Resultados</button>
+  <button onclick="window.location.href='jogos.html';"> criar jogo </button>
+
+</div>
+</body>
+
+</html>
+<script src="homepage_adm.js"></script>

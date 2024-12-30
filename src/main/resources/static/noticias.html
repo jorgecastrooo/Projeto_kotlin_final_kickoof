@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias de Futebol</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="noticias.css">
+</head>
+
+<body>
+<div class="menu-btn" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+<div class="title">Notícias</div>
+<div class="menu" id="menu">
+  <ul class="menu-list">
+    <br>
+    <br>
+    <br>
+    <li><a href="homepage.html"><i class="fas fa-home"></i> Início</a></li> <!-- Link para a página inicial -->
+    <li><a href="resultados.html"><i class="fas fa-futbol"></i> Resultados</a></li>
+    <li><a href="classificações.html"><i class="fas fa-trophy"></i> Classificações</a></li>
+    <li><a href="#"><i class="fas fa-newspaper"></i> Notícias</a></li>
+    <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+  </ul>
+</div>
+
+
+<!-- Filter Section -->
+<div class="filter-section">
+  <label for="category-filter" style="font-size: 18px;">Filtrar por Categoria:</label>
+  <select id="category-filter" onchange="filterNews()">
+    <option value="all">Todos</option>
+    <option value="transferencias">Transferências</option>
+    <option value="resultados">Resultados</option>
+    <option value="lesoes">Lesões</option>
+  </select>
+</div>
+
+<!-- News Section -->
+<div class="news-section" id="news-section"></div>
+
+</body>
+</html>
+<script src="noticias.js"></script>

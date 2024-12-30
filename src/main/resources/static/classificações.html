@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classificação</title>
+  <link rel="stylesheet" href="classificacoes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+<div class="menu-btn" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<div class="menu" id="menu">
+  <ul class="menu-list">
+    <br>
+    <br>
+    <br>
+    <li><a href="homepage.html"><i class="fas fa-home"></i> Início</a></li> <!-- Link para a página inicial -->
+    <li><a href="resultados.html"><i class="fas fa-futbol"></i> Resultados</a></li>
+    <li><a href="#"><i class="fas fa-trophy"></i> Classificações</a></li>
+    <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Notícias</a></li>
+    <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+  </ul>
+</div>
+
+
+<div class="title">Classificação</div>
+
+<!-- Combobox (select) -->
+<div class="select-container">
+  <label style="font-size: 20px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);" for="league">Escolha uma liga:</label>
+  <select id="league">
+    <!-- Opções serão preenchidas dinamicamente -->
+  </select>
+</div>
+
+
+<div class="table-container">
+  <h2>Classificação da Liga</h2>
+  <table class="classification-table" id="classificationTable">
+    <thead>
+    <tr>
+      <th>Posição</th>
+      <th>Clube</th>
+      <th>Pontos</th>
+      <th>Jogos</th>
+      <th>Vitórias</th>
+      <th>Empates</th>
+      <th>Derrotas</th>
+      <th>Gols Marcados</th>
+      <th>Gols Sofridos</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Conteúdo da tabela será atualizado dinamicamente -->
+    </tbody>
+  </table>
+</div>
+</body>
+<script src="classificacoes.js"></script>
+</html>

@@ -1,0 +1,43 @@
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Resultados</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+          <link rel="stylesheet" href="resultados.css">
+        </head>
+
+        <body>
+          <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="title">Resultados</div>
+
+          <div class="menu" id="menu">
+            <ul class="menu-list">
+              <br>
+              <br>
+              <br>
+              <li><a href="homepage.html"><i class="fas fa-home"></i> Início</a></li> <!-- Link para a página inicial -->
+              <li><a href="#"><i class="fas fa-futbol"></i> Resultados</a></li>
+              <li><a href="classificações.html"><i class="fas fa-trophy"></i> Classificações</a></li>
+              <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Notícias</a></li>
+              <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+          </div>
+
+
+          <!-- Filter Section -->
+          <div class="filter-section">
+            <label for="date-filter" style="font-size: 18px;">Filtrar por Data:</label>
+            <input type="date" id="date-filter" onchange="filterResults()" style="padding: 5px; font-size: 16px;">
+          </div>
+
+          <<div class="results-section" id="results-section">
+          </div>
+        </body>
+
+        </html>
+        <script src="resultados.js"></script>
